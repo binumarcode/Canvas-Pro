@@ -100,4 +100,6 @@ for(var i = 0; i < 800; i++) {
 
 }
 
+init();
+
 animate();    
