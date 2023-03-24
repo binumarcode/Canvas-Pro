@@ -20,9 +20,16 @@ var colorArray = [
     "red"
 ]
 
-window.addEventListener('mousemove', function(event) {
+window.addEventListener('touchmove', function(event) {
     mouse.x = event.x;
     mouse.y = event.y;
+});
+
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    init();
 });
 
 function Circle(x, y, dx, dy, radius) {
@@ -68,6 +75,8 @@ function Circle(x, y, dx, dy, radius) {
 
     var circleArray = [];
 
+function init() {
+    circleArray = [];
     for(var i = 0; i < 800; i++) {
         var x = Math.random() * (innerWidth - radius * 2) + radius;
         var y = Math.random() * (innerHeight - radius * 2) + radius;
@@ -77,6 +86,9 @@ function Circle(x, y, dx, dy, radius) {
 
         circleArray.push(new Circle(x, y, dx, dy, radius));
     }
+}
+
+init();
 
 function animate() {
     requestAnimationFrame(animate);
