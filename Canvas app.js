@@ -88,7 +88,6 @@ function init() {
     }
 }
 
-init();
 
 function animate() {
     requestAnimationFrame(animate);
